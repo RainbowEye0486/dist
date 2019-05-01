@@ -7,10 +7,18 @@ $left_column:12%;
 $right_column:36%;
 $middle_column:52%;
 
-
 /*this is first page config*/
+
 body{
     background-color: #304753;
+    -ms-overflow-style: none;
+    height: 100%;
+	width: calc(100vw + 18px);
+	overflow: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .main{
@@ -50,12 +58,6 @@ body{
 
 
 
-
-
-
-
-
-
 /*this is second page config*/
 
 .wrap{
@@ -86,22 +88,26 @@ body{
             margin: 10%;
             width: 80%;
             height: 20%;
-            background-image: url('../img/logo.png');
+            background-image: url('../img/LOGO\ \(3\).png');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
         }
-        .side_icon{
+        .side_icon{      
             position: absolute;
             display: block;
             margin: 10%;
-            left:10%;
+            left:10%;/*
             width:60%;
             height:10%;
-            text-align: center;
-            padding-left: 10%;
-            padding-right: 10%;
-            line-height: 2px;
+            text-align: center;*/
+            padding-left: 25%;
+           /* padding-right: 10%;
+            line-height: 2px;*/
+            position:absolute;
+    width:35%;//
+    height:0;
+    padding-bottom:35% ;//
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -117,6 +123,7 @@ body{
     }
     .order_region{
         position: absolute;
+        //overflow: hidden;
         width: $middle_column;
         height: $middle_height;
         top:$nav_height;
@@ -128,7 +135,6 @@ body{
     }
     .shopping_region{
         position: absolute;
-        background-color: aquamarine;
         top:$nav_height;
         right: 0;
         width: $right_column;
@@ -141,41 +147,259 @@ body{
 border:3px solid red;
 }
 
+.shadow{
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 250, 250);
+    opacity: 0.5;
+    z-index: 100;
+    display: none;
+}
+
+
 #menber{
-    background-image: url('../img/burger_icon.jpg');
+    background-image: url('../img/member.png');
     margin: 5%;
     top:25%;
+    border-radius:5px; 
 }
 #menu{
-    background-image: url('../img/burger_icon.jpg');
+    background-image: url('../img/menu.png');
     margin: 5%;
-    top:35%;
+    top:37%;
+    border-radius:5px; 
 }
 #map{
-    background-image: url('../img/burger_icon.jpg');
+    background-image: url('../img/map.png');
     margin: 5%;
-    top:45%;
+    top:49%;
+    border-radius:5px; 
 }
 
 
 .hamburger{
-    //position:absolute;
-    margin: 0%;
-    padding: 10%;
-    width: 40%;
-    height: 100px;
-    display: block;
-    background-color: bisque;
+    position:absolute;
+    width:35%;
+    height:0;
+    padding-bottom:35% ;
+    background-color: blanchedalmond;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    //--------------------------------------
+    border: 2px solid;
+}
 
-    #img{
-        margin:left;
-        padding: 0%;
-        display: inline;
-        position: absolute;
-        box-align: left;
-        background-color: aqua;
-        block-size: 60% 100%;
+#burger1{
+    top:0%;
+    left:10%;
+    background-image: url('../img/27b6fd380a9a43f742508a1d18bf67ee.jpg');
+ 
+}
+
+#burger2{
+    top:0%;
+    right: 10%;
+    background-image: url('../img/fe8a821d11269ba7e8ded9432331cd35.jpg')
+}
+
+#burger3{
+    bottom: 0%;
+    left: 10%;
+    background-image: url('../img/fe8a821d11269ba7e8ded9432331cd35.jpg')
+}
+
+#burger4{
+    bottom: 0%;
+    right: 10%;
+    background-image: url('../img/27b6fd380a9a43f742508a1d18bf67ee.jpg')
+}
+
+.rating{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width:30%;
+    height: 20px;
+    
+}
+
+.glyphicon-star:before{
+    color: gold;
+    font-size: 20px;
+    height: 100%;
+}
+
+.rating_text{
+    color:gold;
+    font-size: 20px;
+    height: 100%;
+    margin: 0%;
+    top:-15%;
+}
+
+.cal{
+    color:white;
+    position: absolute;
+    top:3%;
+    right: 2%;
+    font-size: 16px;
+    span{
+        font-size: 25px;
     }
 }
 
+.container_pic{
+    position: absolute;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.8;
+    padding: 3px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 85%;
+    .food_name{
+        font-size: 25px;
+    }
+    .food_content{
+        font-size: 12px;
+    }
+    .food_price{
+        font-size: 30px;
+        color: red;
+    }
+}
+
+.plus_btn{
+    position: absolute;
+    right: -10%;
+    top:40%;
+    background-image: url('../img/add-circular-outlined-button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: 20%;;
+}
+
+.shoping_cart{
+    position:absolute;
+    left:0%;
+    top:0%;
+    width:75%;
+    height:100%;
+    background-color: rgb(200, 206, 207);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#cart_pic{
+    width: 100%;
+
+}
+
+.append_rigion{
+    position: absolute;
+    overflow: scroll;
+    width: 100%;
+    height: 60%;
+    top:20%;
+    //------------------------------
+    border:2px solid;
+}
+
+.order_list{
+    position: relative;
+    width:85%;
+    height: 85px;
+    background-color: azure;
+    margin: 13px;
+    border-radius:10px;
+    box-shadow: 5px #304753;
+}
+.order_name{
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.ingredient{
+    font-size: 12px;
+    bottom: 19px;
+    position: absolute;
+    left: 10px;
+
+    margin: 0%;
+}
+.sauce{
+    font-size: 12px;
+    bottom: 0%;
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    margin: 0%;
+}
+
+.single_price{
+    position: absolute;
+    font-size: 20px;
+    top:5px;
+    right: 5%;
+}
+
+.delete_btn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+    right: -10%;
+  
+    border: 2px solid;
+  }
+
+  .add_btn{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top:10px;
+    right: 20%;
+  
+    border: 2px solid;
+  }
+
+  .minus_btn{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top:10px;
+    right: 40%;
+  
+    border: 2px solid;
+  }
+  .order_number{
+    position: absolute;
+    font-size: 20px;
+    top:5px;
+    right: 32%;
+  }
+
+  .total_pay{
+    position: absolute;
+    font-size: 45px;
+    bottom: 10%;
+    letter-spacing: 5px;
+    left:20%;
+  }
+
+/*modal control*/
+.modal-body{
+    width: 60%;
+    height: 40%;
+}  
+/*modal control*/
+
+
+/*this is third page config*/
 
